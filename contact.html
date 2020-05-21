@@ -60,8 +60,10 @@
                 <dl>
                   <dt><span class="required"> お名前</span></dt>
                   <dd><input type="text" name="name" class="name" required></dd>
+                  <span style="color: #f33"></span>
                   <dt><span class="required">メールアドレス</span></dt>
                   <dd><input type="email" name="email" class="email" required></dd>
+                  <span style="color: #f33"></span>
                   <dt>お電話番号</dt>
                   <dd><input type="tel" name="tel" class="tel"></dd>
                   <dt>お問い合わせ番号</dt>
@@ -98,5 +100,29 @@
       All Right Reserved</small>
   </footer>
   <!-- footer終わり -->
+  
+      <script>
+      const email = document.querySelector('input[name="email"]')
+                email.addEventListener('blur', () => {
+                    if (email.value === '') {
+                        email.style.backgroundColor = '#fcc';
+                        email.nextElementSibling.innerHTML = '※ メールアドレスをご記入ください';
+                    } else {
+                        email.style.backgroundColor = '#fff';
+                        email.nextElementSibling.innerHTML = '';
+                    }
+                });
+                const name = document.querySelector('input[name="name"]')
+                name.addEventListener('blur', () => {
+                    if (name.value === '') {
+                        name.style.backgroundColor = '#fcc';
+                        name.nextElementSibling.innerHTML = '※ メールアドレスをご記入ください';
+                    } else {
+                        name.style.backgroundColor = '#fff';
+                        name.nextElementSibling.innerHTML = '';
+                    }
+                });
+    </script>
+  
 </body>
 </html>
